@@ -1,6 +1,6 @@
 from django.http import HttpResponse, JsonResponse, Http404
 from django.views.decorators.csrf import csrf_exempt
-from rest_framework import viewsets, permissions, status, mixins, generics
+from rest_framework import viewsets, permissions, status, mixins, generics, renderers
 from rest_framework.decorators import api_view
 from rest_framework.parsers import JSONParser
 from rest_framework.response import Response
@@ -104,8 +104,10 @@ class SnippetViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
+
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
     queryset = Snippet.objects.all().order_by('-created')
     serializer_class = SnippetSerializer
     # permission_classes = [permissions.IsAuthenticated]
@@ -115,9 +117,9 @@ class SnippetList(APIView):
     """
     List all snippets, or create a new snippet.
     """
+
     # permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     #
-
 
     def get(self, request, format=None):
         snippets = Snippet.objects.all()
@@ -221,3 +223,12 @@ class UserList(generics.ListAPIView):
 class UserDetail(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+
+class SnippetHighlight(generics.GenericAPIView):
+    queryset = Snippet.objects.all()
+    renderer_classes = [renderers.StaticHTMLRenderer]
+
+    def get(self, request, *args, **kwargs):
+        snippet = self.get_object()
+        return Response(snippet.highlighted)
