@@ -51,3 +51,6 @@ python manage.py shell
 
 1. [django-rest-framework官方教程](https://www.django-rest-framework.org/tutorial/quickstart/)
 2. [django-视图集ViewSet](https://blog.csdn.net/qq_29286967/article/details/80921198)
+3. [django官方文档](https://docs.djangoproject.com/zh-hans/2.0/topics/http/urls/)
+4. [Gunicorn](https://docs.gunicorn.org/en/latest/run.html)
+5. [uWSGI 托管 Django](https://docs.djangoproject.com/zh-hans/3.0/howto/deployment/wsgi/uwsgi/)
