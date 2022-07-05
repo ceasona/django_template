@@ -54,3 +54,5 @@ python manage.py shell
 3. [django官方文档](https://docs.djangoproject.com/zh-hans/2.0/topics/http/urls/)
 4. [Gunicorn](https://docs.gunicorn.org/en/latest/run.html)
 5. [uWSGI 托管 Django](https://docs.djangoproject.com/zh-hans/3.0/howto/deployment/wsgi/uwsgi/)
+6. [Django request_id](https://github.com/dabapps/django-log-request-id)
+7. [Django logger](https://docs.djangoproject.com/zh-hans/4.0/howto/logging/#logging-how-to)
