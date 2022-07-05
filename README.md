@@ -56,3 +56,4 @@ python manage.py shell
 5. [uWSGI 托管 Django](https://docs.djangoproject.com/zh-hans/3.0/howto/deployment/wsgi/uwsgi/)
 6. [Django request_id](https://github.com/dabapps/django-log-request-id)
 7. [Django logger](https://docs.djangoproject.com/zh-hans/4.0/howto/logging/#logging-how-to)
+8. [DjangoRestFramework 使用 django-oauth-toolkit](https://blog.csdn.net/css_aaa/article/details/118651288)
